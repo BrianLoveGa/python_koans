@@ -3,9 +3,11 @@
 
 from runner.koan import *
 
+
 class AboutSets(Koan):
     def test_sets_make_keep_lists_unique(self):
-        highlanders = ['MacLeod', 'Ramirez', 'MacLeod', 'Matunas', 'MacLeod', 'Malcolm', 'MacLeod']
+        highlanders = ['MacLeod', 'Ramirez', 'MacLeod',
+                       'Matunas', 'MacLeod', 'Malcolm', 'MacLeod']
 
         there_can_only_be_only_one = set(highlanders)
 
@@ -47,11 +49,11 @@ class AboutSets(Koan):
     # ------------------------------------------------------------------
 
     def test_we_can_query_set_membership(self):
-        self.assertEqual(True, 127 in {127, 0, 0, 1} )
-        self.assertEqual(True, 'cow' not in set('apocalypse now') )
+        self.assertEqual(True, 127 in {127, 0, 0, 1})
+        self.assertEqual(True, 'cow' not in set('apocalypse now'))
 
     def test_we_can_compare_subsets(self):
         self.assertEqual(True, set('cake') <= set('cherry cake'))
-        self.assertEqual(True, set('cake').issubset(set('cherry cake')) )
+        self.assertEqual(True, set('cake').issubset(set('cherry cake')))
 
         self.assertEqual(False, set('cake') > set('pie'))
